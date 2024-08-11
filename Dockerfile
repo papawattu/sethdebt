@@ -1,5 +1,8 @@
 # syntax=docker/dockerfile:1
 FROM node 
+LABEL org.opencontainers.image.source=https://github.com/papawattu/sethdebt
+LABEL org.opencontainers.image.description="A simple web app to track debt"
+LABEL org.opencontainers.image.licenses=MIT
 
 # Create app directory
 WORKDIR /usr/src/app
