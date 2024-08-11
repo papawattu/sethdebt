@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sethdebt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sethdebt
+  template:
+    metadata:
+      labels:
+        app: sethdebt
+    spec:
+      containers:
+        - name: sethdebt
+          image: ghcr.io/papawattu/sethdebt:latest
+          ports:
+            - containerPort: 80

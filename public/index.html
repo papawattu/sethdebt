@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>Seth Debt</title>
+    <link href="./build/main.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@latest"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let spinning = false
+        let randomNumber = Math.floor(Math.random() * 7) + 1
+        document.querySelector('img').src = `img/seth${randomNumber}.jpg`
+        document.querySelector('img').addEventListener('click', function () {
+          if (spinning) {
+            spinning = false
+            this.classList.remove('animate-spin')
+            return
+          }
+          this.classList.add('animate-spin')
+          spinning = true
+        })
+        document.querySelector('img').addEventListener('dblclick', function () {
+          let randomNumber = Math.floor(Math.random() * 7) + 1
+          document.querySelector('img').src = `img/seth${randomNumber}.jpg`
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div id="root" class="flex max-h-96 justify-center h-48">
+      <img
+        src="img/seth1.jpg"
+        class="h-36 w-36 border-s-8 rounded-full shadow-xl m-8"
+      />
+      <div
+        class="text-gray-900 justify-center align-middle content-center bg-blue-300 text-4xl rounded-2xl p-4 shadow-lg m-8"
+      >
+        Seth's debt is currently <span class="text-red-600">£950</span>
+      </div>
+    </div>
+  </body>
+</html>
