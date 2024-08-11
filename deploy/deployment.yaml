@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: sethdebt
-          image: ghcr.io/papawattu/sethdebt:latest
+          image: ghcr.io/papawattu/sethdebt:main@sha256:023089ae527547cf0d676e2b7dd1d84d9048eb93ba22571ab6074b103542bb19
           ports:
             - containerPort: 80
